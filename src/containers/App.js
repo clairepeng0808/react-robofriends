@@ -19,8 +19,9 @@ class App extends Component {
 
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
-      // fetch -> to make requests to the server
+      // fetch -> to make Ajax requests to the server
       .then((response) => response.json())
+      //response was a Promise, convert the promise to json format
       .then((users) => this.setState({ robots: users }));
   }
   // every time the state changes, we run render() again.
